@@ -41,7 +41,7 @@ export default function SPICONRegistration() {
   const [form, setForm] = useState(initial);
   const [screenshot, setScreenshot] = useState(null);
   const [message, setMessage] = useState("");
-  const [messageType, setMessageType] = useState(""); // success or error
+  const [messageType, setMessageType] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handle = (e) => {
@@ -53,7 +53,6 @@ export default function SPICONRegistration() {
     setMessage("");
     setMessageType("");
 
-    // BASIC VALIDATION
     if (!form.fullName || !form.mobile || !form.groupType || !form.amountPaid) {
       setMessage("Please fill all mandatory fields.");
       setMessageType("error");
@@ -62,13 +61,13 @@ export default function SPICONRegistration() {
 
     const fd = new FormData();
     Object.entries(form).forEach(([k, v]) => fd.append(k, v));
-
     if (screenshot) fd.append("paymentScreenshot", screenshot);
 
     setLoading(true);
+
     try {
       const res = await fetch(
-        "http://localhost:5000/api/cashier/registerCustomer",
+        "http://13.234.197.201:5000/api/cashier/registerCustomer",
         {
           method: "POST",
           body: fd,
@@ -89,7 +88,7 @@ export default function SPICONRegistration() {
     }
 
     setLoading(false);
-    window.scrollTo({ top: 0, behavior: "smooth" }); // scroll to top
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -114,6 +113,33 @@ export default function SPICONRegistration() {
           style={{ width: "120px", marginBottom: "15px" }}
         />
 
+        {/* BANK ACCOUNT DETAILS ADDED HERE */}
+        <div
+          className="p-3 mb-4"
+          style={{
+            border: "2px solid #0d6efd",
+            borderRadius: "8px",
+            background: "#f0f7ff",
+            maxWidth: "650px",
+            margin: "0 auto",
+          }}
+        >
+          <h5 className="fw-bold text-primary text-center mb-2">
+            SPICON 2026 — Payment Bank Details
+          </h5>
+
+          <p className="mb-1"><strong>Bank Name:</strong> State Bank of India (SBI)</p>
+          <p className="mb-1"><strong>Branch:</strong> JNTU College of Eng Campus, Pulivendla</p>
+          <p className="mb-1"><strong>Account Holder Name:</strong> Jagtap Jagan</p>
+          <p className="mb-1"><strong>Account Number:</strong> 44676705721</p>
+          <p className="mb-1"><strong>IFSC Code:</strong> SBIN0012674</p>
+          <p className="mb-1"><strong>MICR:</strong> 516002584</p>
+
+          <p className="text-danger fw-bold mt-2 text-center">
+            Please pay the registration amount and upload the payment screenshot.
+          </p>
+        </div>
+
         <h2 className="fw-bold mb-2">
           REGISTRATION FOR SPICON 2026 (West Rayalaseema)
         </h2>
@@ -125,8 +151,7 @@ export default function SPICONRegistration() {
           <strong>Venue:</strong> Seventh-day Adventist High School,
         </p>
         <p className="mb-3">
-          Duggannagaripalli, Vemula Mandal (Near Vempalli),
-          <br />
+          Duggannagaripalli, Vemula Mandal (Near Vempalli),<br />
           Kadapa District (Y.S.R. Dist.)
         </p>
 
@@ -136,14 +161,13 @@ export default function SPICONRegistration() {
         <ul className="text-start mx-auto" style={{ maxWidth: "800px" }}>
           <li>Born-again experience, minimum D.T. Camp attendance, and recommendation by senior adviser/district staff.</li>
           <li>Graduates involved in student ministry with recommendation by EGF Secretary and APEGF staff.</li>
-          <li>Only authenticated registrations will be added to the “SPICON-2026 WR Delegates” WhatsApp group.</li>
+          <li>Only authenticated registrations will be added to the SPICON-2026 WR Delegates WhatsApp group.</li>
         </ul>
 
         <p className="fw-bold mt-2">This is a sign that your registration is confirmed.</p>
 
         <p className="mt-3">
-          <strong>Last date for registration:</strong>
-          <br />
+          <strong>Last date for registration:</strong><br />
           Dec 31, 2026 – 6 PM
         </p>
 
@@ -163,16 +187,13 @@ export default function SPICONRegistration() {
         <p className="fw-bold mt-3">For any queries, please contact:</p>
 
         <p>
-          <strong>Bro. R. Sudhakar (Tadipatri)</strong>
-          <br />
+          <strong>Bro. R. Sudhakar (Tadipatri)</strong><br />
           9866621304
         </p>
 
         <p className="mt-3">
-          Yours in Christ,
-          <br />
-          <strong>Bro. Sudhekar</strong>
-          <br />
+          Yours in Christ,<br />
+          <strong>Bro. Sudhekar</strong><br />
           Registrar
         </p>
 
@@ -197,17 +218,24 @@ export default function SPICONRegistration() {
         {/* TITLE */}
         <div className="col-md-6">
           <label className="form-label">Title (గౌరవ సంబోధన)</label>
-          <input
+          <select
             name="title"
-            className="form-control"
+            className="form-select"
             value={form.title}
             onChange={handle}
-          />
+          >
+            <option value="">Choose</option>
+            <option>Mr</option>
+            <option>Mrs</option>
+            <option>Ms</option>
+            <option>Pastor</option>
+            <option>Dr</option>
+          </select>
         </div>
 
         {/* FULL NAME */}
         <div className="col-md-6">
-          <label className="form-label">Full Name *</label>
+          <label className="form-label">Enter Full Name *</label>
           <input
             name="fullName"
             className="form-control"
@@ -454,9 +482,7 @@ export default function SPICONRegistration() {
 
             {/* CHILDREN BELOW 10 */}
             <div className="col-md-6">
-              <label className="form-label">
-                Children less than 10 (Count)
-              </label>
+              <label className="form-label">Children less than 10 (Count)</label>
               <input
                 name="childBelow10Count"
                 className="form-control"
@@ -487,9 +513,7 @@ export default function SPICONRegistration() {
             </div>
 
             <div className="col-md-6">
-              <label className="form-label">
-                Names of children 10–14
-              </label>
+              <label className="form-label">Names of children 10–14</label>
               <input
                 name="child10to14Names"
                 className="form-control"
@@ -500,9 +524,7 @@ export default function SPICONRegistration() {
 
             {/* TOTAL FAMILY COUNT */}
             <div className="col-md-12">
-              <label className="form-label">
-                Total family members attending *
-              </label>
+              <label className="form-label">Total family members attending *</label>
               <input
                 name="totalFamilyMembers"
                 className="form-control"
@@ -512,11 +534,9 @@ export default function SPICONRegistration() {
               />
             </div>
 
-            {/* DELEGATES OTHER */}
+            {/* OTHER DELEGATES */}
             <div className="col-md-12">
-              <label className="form-label">
-                Other delegates excluding family
-              </label>
+              <label className="form-label">Other delegates excluding family</label>
               <textarea
                 name="delegatesOther"
                 className="form-control"
@@ -579,7 +599,7 @@ export default function SPICONRegistration() {
           />
         </div>
 
-        {/* SCREENSHOT */}
+        {/* SCREENSHOT UPLOAD */}
         <div className="col-md-12">
           <label>Upload Payment Screenshot *</label>
           <input
@@ -625,7 +645,7 @@ export default function SPICONRegistration() {
         </div>
       </form>
 
-      {/* FULL SCREEN SPINNER */}
+      {/* FULL SCREEN LOADER */}
       {loading && (
         <div
           style={{
