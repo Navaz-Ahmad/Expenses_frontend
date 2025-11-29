@@ -113,32 +113,7 @@ export default function SPICONRegistration() {
           style={{ width: "120px", marginBottom: "15px" }}
         />
 
-        {/* BANK ACCOUNT DETAILS ADDED HERE */}
-        <div
-          className="p-3 mb-4"
-          style={{
-            border: "2px solid #0d6efd",
-            borderRadius: "8px",
-            background: "#f0f7ff",
-            maxWidth: "650px",
-            margin: "0 auto",
-          }}
-        >
-          <h5 className="fw-bold text-primary text-center mb-2">
-            SPICON 2026 — Payment Bank Details
-          </h5>
-
-          <p className="mb-1"><strong>Bank Name:</strong> State Bank of India (SBI)</p>
-          <p className="mb-1"><strong>Branch:</strong> JNTU College of Eng Campus, Pulivendla</p>
-          <p className="mb-1"><strong>Account Holder Name:</strong> Jagtap Jagan</p>
-          <p className="mb-1"><strong>Account Number:</strong> 44676705721</p>
-          <p className="mb-1"><strong>IFSC Code:</strong> SBIN0012674</p>
-          <p className="mb-1"><strong>MICR:</strong> 516002584</p>
-
-          <p className="text-danger fw-bold mt-2 text-center">
-            Please pay the registration amount and upload the payment screenshot.
-          </p>
-        </div>
+       
 
         <h2 className="fw-bold mb-2">
           REGISTRATION FOR SPICON 2026 (West Rayalaseema)
@@ -558,6 +533,20 @@ export default function SPICONRegistration() {
             required
           />
         </div>
+        {/* --- NEW ACCOUNT DETAILS SECTION ADDED HERE --- */}
+        <div className="col-12 mt-4">
+          <hr className="mb-3" />
+          <h5 className="fw-bold mb-3">Account Details</h5>
+          
+          <div className="p-3" style={{ background: "#f8f9fa", borderRadius: "5px" }}>
+            <p className="mb-2"><strong>Account Holder Name:</strong> Mr. Jagatap Jagan</p>
+            <p className="mb-2"><strong>IFSC Code:</strong> SBIN0012674</p>
+            <p className="mb-0"><strong>Account No:</strong> 44676705721</p>
+          </div>
+
+          <hr className="mt-4" />
+        </div>
+        {/* --- END OF NEW SECTION --- */}        
 
         <div className="col-md-6">
           <label className="form-label">Mode of Payment *</label>
