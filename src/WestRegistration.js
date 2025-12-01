@@ -116,11 +116,12 @@ export default function SPICONRegistration() {
        
 
         <h2 className="fw-bold mb-2">
-          REGISTRATION FOR SPICON 2026 (West Rayalaseema)
+          WEST RAYALASEEMA SPICON-2026 REGISTRATION FORM
         </h2>
 
         <p className="mb-1">
-          <strong>Date:</strong> Jan 11–14, 2026
+          <strong>Dates:</strong> 10<sup>th</sup> 5pm to 13<sup>th</sup> 1:00pm January 2026
+
         </p>
         <p className="mb-1">
           <strong>Venue:</strong> Seventh-day Adventist High School,
@@ -134,16 +135,16 @@ export default function SPICONRegistration() {
 
         <h5 className="fw-bold mt-3">Who can attend?</h5>
         <ul className="text-start mx-auto" style={{ maxWidth: "800px" }}>
-          <li>Students with Born-again experience, minimum D.T. Camp attendance, and recommendation by senior adviser/district staff.</li>
-          <li>Graduates involving in student ministry with recommendation by EGF Secretary/APEGF staff.</li>
-          <li>Only authenticated registrations will be added to the SPICON-2026 WR Delegates WhatsApp group.</li>
+          <li>Students with Born-again experience, D.T. Camp attended and with recommendation</li>
+          <li>Graduates involving in student ministry and with recommendation.</li>
+          <li>Only authenticated registrations will be added to the SPICON-2026 East Rayalseema Delegates WhatsApp group.</li>
         </ul>
 
         <p className="fw-bold mt-2">This is a sign that your registration is confirmed.</p>
 
         <p className="mt-3">
           <strong>Last date for registration:</strong><br />
-          Dec 20, 2025 – 12 PM
+          Dec 22, 2025 – 11:59 PM
         </p>
 
         <p className="text-danger fw-bold">NOTE: Spot registrations will not be allowed under any circumstances.</p>
@@ -158,6 +159,11 @@ export default function SPICONRegistration() {
           <li>Children above 15 years – ₹500</li>
           <li>Volunteers – ₹250</li>
         </ul>
+        <p><span className="fw-bold">NOTE:</span></p>
+        <div>1. Children above 15 years old must be registered separately</div>
+        <div>2. Pensioners and Business people are treated as employees.</div>
+        <div>3.Students attending under volunteers’ kota should reach the venue by 8am on 10/01/26 and leave the campus after the completion of physical works in venue.</div>
+  
 
         <p className="fw-bold mt-3">For any queries, please contact:</p>
 
@@ -202,7 +208,7 @@ export default function SPICONRegistration() {
             <option value="">Choose</option>
             <option>Mr</option>
             <option>Mrs</option>
-            <option>Ms</option>
+            <option>Miss</option>
             <option>Pastor</option>
             <option>Dr</option>
           </select>
@@ -234,7 +240,7 @@ export default function SPICONRegistration() {
 
         {/* DTC ATTENDED */}
         <div className="col-md-6">
-          <label className="form-label">Have you attended DTC? *</label>
+          <label className="form-label">Have you attended DT Camp? *</label>
           <select
             name="dtcAttended"
             className="form-select"
@@ -251,7 +257,7 @@ export default function SPICONRegistration() {
         {form.dtcAttended === "Yes" && (
           <>
             <div className="col-md-6">
-              <label className="form-label">When did you attend DTC? *</label>
+              <label className="form-label">When did you attend your first DT Camp?  *</label>
               <input
                 name="dtcWhen"
                 className="form-control"
@@ -262,7 +268,7 @@ export default function SPICONRegistration() {
             </div>
 
             <div className="col-md-6">
-              <label className="form-label">Where did you attend DTC? *</label>
+              <label className="form-label">Where did you attend first  DT Camp?  *</label>
               <input
                 name="dtcWhere"
                 className="form-control"
@@ -363,16 +369,16 @@ export default function SPICONRegistration() {
             required
           >
             <option value="">Choose</option>
-            <option>EGF President</option>
             <option>EGF Secretary</option>
             <option>Senior Advisor</option>
-            <option>Staff Worker</option>
+            <option>Staff Workerr</option>
             <option>District Coordinator</option>
+            <option>Regional Coordinator</option>
           </select>
         </div>
 
         <div className="col-md-6">
-          <label className="form-label">Recommender Contact *</label>
+          <label className="form-label">Recommended Person’s Contact  *</label>
           <input
             name="recommenderContact"
             className="form-control"
@@ -435,7 +441,7 @@ export default function SPICONRegistration() {
 
             {/* SPOUSE */}
             <div className="col-md-6">
-              <label className="form-label">Is your spouse attending?</label>
+              <label className="form-label">Is your spouse attending SPICON-2026?</label>
               <select
                 name="spouseAttending"
                 className="form-select"
@@ -461,7 +467,7 @@ export default function SPICONRegistration() {
 
             {/* CHILDREN BELOW 10 */}
             <div className="col-md-6">
-              <label className="form-label">Children less than 10 (Count)</label>
+              <label className="form-label">No. of children less than 10 years old attending conference SPICON -2026</label>
               <input
                 name="childBelow10Count"
                 className="form-control"
@@ -471,7 +477,7 @@ export default function SPICONRegistration() {
             </div>
 
             <div className="col-md-6">
-              <label className="form-label">Names of children below 10</label>
+              <label className="form-label">Names of children 10-14 years old attending conference SPICON -2026</label>
               <input
                 name="childBelow10Names"
                 className="form-control"
@@ -482,7 +488,7 @@ export default function SPICONRegistration() {
 
             {/* CHILDREN 10–14 */}
             <div className="col-md-6">
-              <label className="form-label">Children 10–14 (Count)</label>
+              <label className="form-label">No. of Children 10–14 years old attending conference SPICON -2026</label>
               <input
                 name="child10to14Count"
                 className="form-control"
@@ -492,7 +498,7 @@ export default function SPICONRegistration() {
             </div>
 
             <div className="col-md-6">
-              <label className="form-label">Names of children 10–14</label>
+              <label className="form-label">Names of children 10–14 years old attending conference SPICON -2026</label>
               <input
                 name="child10to14Names"
                 className="form-control"
@@ -503,7 +509,7 @@ export default function SPICONRegistration() {
 
             {/* TOTAL FAMILY COUNT */}
             <div className="col-md-12">
-              <label className="form-label">Total family members attending *</label>
+              <label className="form-label">Total family members attending (Including children’s)  *</label>
               <input
                 name="totalFamilyMembers"
                 className="form-control"
@@ -515,7 +521,7 @@ export default function SPICONRegistration() {
 
             {/* OTHER DELEGATES */}
             <div className="col-md-12">
-              <label className="form-label">Other delegates excluding family</label>
+              <label className="form-label">Names of others (Servant Girls/Helpers)</label>
               <textarea
                 name="delegatesOther"
                 className="form-control"
@@ -525,6 +531,22 @@ export default function SPICONRegistration() {
             </div>
           </>
         )}
+                       {/* MARITAL STATUS */}
+        <div className="col-md-6">
+         <label className="form-label">Marital Status *</label>
+         <select
+          name="maritalStatus"
+          className="form-select"
+          value={form.maritalStatus}
+          onChange={handle}
+          required
+        >
+         <option value="">Select</option>
+         <option>Married - Attending with Family</option>
+         <option>Married - Single</option>
+         <option>Unmarried</option>
+         </select>
+        </div>
 
 
         {/* --- NEW ACCOUNT DETAILS SECTION ADDED HERE --- */}
@@ -610,20 +632,11 @@ export default function SPICONRegistration() {
           />
         </div>
 
-        {/* ARRIVAL DAY */}
-        <div className="col-md-6">
-          <label>When will you reach venue?</label>
-          <input
-            name="arrivalDay"
-            className="form-control"
-            value={form.arrivalDay}
-            onChange={handle}
-          />
-        </div>
+   
 
         {/* ARRIVAL TIME */}
         <div className="col-md-6">
-          <label>Arrival Time *</label>
+          <label>Your Arrival time on 10/01/26  *</label>
           <select
             name="arrivalTime"
             className="form-select"
