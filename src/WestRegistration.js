@@ -400,8 +400,8 @@ export default function SPICONRegistration() {
             required
           >
             <option value="">Choose</option>
-            <option>EGF Secretary</option>
-            <option>Senior Advisor</option>
+            <option>EGF Secretary/EGF staff</option>
+            <option>Senior Advisor/District staff</option>
             <option>Staff Workerr</option>
             <option>District Coordinator</option>
             <option>Regional Coordinator</option>
