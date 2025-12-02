@@ -660,7 +660,7 @@ export default function SPICONRegistration() {
 
         {/* ARRIVAL TIME */}
         <div className="col-md-6">
-          <label>Your Arrival time on 10/01/26  *</label>
+          <label>Your Arrival time on 11/01/26  *</label>
           <select
             name="arrivalTime"
             className="form-select"
