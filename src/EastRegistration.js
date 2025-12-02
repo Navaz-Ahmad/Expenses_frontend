@@ -395,8 +395,8 @@ export default function EastRegistration() {
             required
           >
             <option value="">Choose</option>
-            <option>EGF Secretary/EGF staff</option>
-            <option>Senior Advisor/Distict staff</option>
+            <option>EGF Secretary</option>
+            <option>Senior Advisor</option>
             <option>Staff Worker</option>
             <option>District Coordinator</option>
             <option>Regional Coordinator</option>
