@@ -27,7 +27,7 @@ const RegistrationSuccess = () => {
           <hr />
 
           <div className="alert alert-success py-4">
-            <h5 className="fw-bold mb-3">Your Registration is Confirmed!</h5>
+           
             <p className="mb-2">
               Further communication will be done through the email address you provided:
             </p>
@@ -37,9 +37,7 @@ const RegistrationSuccess = () => {
             </p>
           </div>
 
-          <p className="mt-3">
-            You will be added to the {region} WhatsApp group shortly.
-          </p>
+          
 
           <button 
             className="btn btn-primary px-4 mt-3" 
